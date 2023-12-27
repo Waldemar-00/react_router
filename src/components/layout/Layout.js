@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
-import Header from './Header';
-import styles from './Layout.module.css';
+import { Fragment } from 'react' 
+import Header from './Header' 
+import styles from './Layout.module.css' 
 
 const Layout = () => {
   return (
@@ -8,7 +8,7 @@ const Layout = () => {
       <Header />
       <main className={styles.main}>{props.children}</main>
     </Fragment>
-  );
-};
+  ) 
+} 
 
-export default Layout;
+export default Layout 

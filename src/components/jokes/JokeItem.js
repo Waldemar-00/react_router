@@ -1,4 +1,4 @@
-import styles from './JokeItem.module.css';
+import styles from './JokeItem.module.css' 
 
 const JokeItem = (props) => {
   return (
@@ -11,7 +11,7 @@ const JokeItem = (props) => {
       </figure>
       <a className='btn'>Expand</a>
     </li>
-  );
-};
+  ) 
+} 
 
-export default JokeItem;
+export default JokeItem 

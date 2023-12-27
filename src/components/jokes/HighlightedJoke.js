@@ -1,4 +1,4 @@
-import styles from './HighlightedJoke.module.css';
+import styles from './HighlightedJoke.module.css' 
 
 const HighlightedJoke = (props) => {
   return (
@@ -6,7 +6,7 @@ const HighlightedJoke = (props) => {
       <p>{props.text}</p>
       <figcaption>{props.topic}</figcaption>
     </figure>
-  );
-};
+  ) 
+} 
 
-export default HighlightedJoke;
+export default HighlightedJoke 

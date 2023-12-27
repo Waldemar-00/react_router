@@ -1,7 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment } from 'react' 
 
-import JokeItem from './JokeItem';
-import styles from './JokeList.module.css';
+import JokeItem from './JokeItem' 
+import styles from './JokeList.module.css' 
 
 const JokeList = (props) => {
   return (
@@ -17,7 +17,7 @@ const JokeList = (props) => {
         ))}
       </ul>
     </Fragment>
-  );
-};
+  ) 
+} 
 
-export default JokeList;
+export default JokeList 

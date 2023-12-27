@@ -1,13 +1,13 @@
-import { useRef } from 'react';
+import { useRef } from 'react' 
 
-import styles from './NewCommentForm.module.css';
+import styles from './NewCommentForm.module.css' 
 
 const NewCommentForm = (props) => {
-  const commentTextRef = useRef();
+  const commentTextRef = useRef() 
 
   const submitFormHandler = (event) => {
-    event.preventDefault();
-  };
+    event.preventDefault() 
+  } 
 
   return (
     <form className={styles.form} onSubmit={submitFormHandler}>
@@ -19,7 +19,7 @@ const NewCommentForm = (props) => {
         <button className='btn'>Add Comment</button>
       </div>
     </form>
-  );
-};
+  ) 
+} 
 
-export default NewCommentForm;
+export default NewCommentForm 

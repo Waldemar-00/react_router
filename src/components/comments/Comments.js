@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react' 
 
-import styles from './Comments.module.css';
-import NewCommentForm from './NewCommentForm';
+import styles from './Comments.module.css' 
+import NewCommentForm from './NewCommentForm' 
 
 const Comments = () => {
-  const [isAddingComment, setIsAddingComment] = useState(false);
+  const [isAddingComment, setIsAddingComment] = useState(false) 
 
   const startAddCommentHandler = () => {
-    setIsAddingComment(true);
-  };
+    setIsAddingComment(true) 
+  } 
 
   return (
     <section className={styles.comments}>
@@ -21,7 +21,7 @@ const Comments = () => {
       {isAddingComment && <NewCommentForm />}
       <p>Comments...</p>
     </section>
-  );
-};
+  ) 
+} 
 
-export default Comments;
+export default Comments 

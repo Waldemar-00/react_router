@@ -1,20 +1,20 @@
-import { useRef } from 'react';
+import { useRef } from 'react' 
 
-import Card from '../ui/Card';
-import Loader from '../UI/Loader';
-import styles from './JokeForm.module.css';
+import Card from '../ui/Card' 
+import Loader from '../UI/Loader' 
+import styles from './JokeForm.module.css' 
 
 const JokeForm = (props) => {
-  const topicInputRef = useRef();
-  const textInputRef = useRef();
+  const topicInputRef = useRef() 
+  const textInputRef = useRef() 
 
   function submitFormHandler(event) {
-    event.preventDefault();
+    event.preventDefault() 
 
-    const enteredTopic = topicInputRef.current.value;
-    const enteredText = textInputRef.current.value;
+    const enteredTopic = topicInputRef.current.value 
+    const enteredText = textInputRef.current.value 
 
-    props.onAddJoke({ topic: enteredTopic, text: enteredText });
+    props.onAddJoke({ topic: enteredTopic, text: enteredText }) 
   }
 
   return (
@@ -39,7 +39,7 @@ const JokeForm = (props) => {
         </div>
       </form>
     </Card>
-  );
-};
+  ) 
+} 
 
-export default JokeForm;
+export default JokeForm 

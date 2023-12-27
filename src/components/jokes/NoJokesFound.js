@@ -1,4 +1,4 @@
-import styles from './NoJokesFound.module.css';
+import styles from './NoJokesFound.module.css' 
 
 const NoJokesFound = () => {
   return (
@@ -6,7 +6,7 @@ const NoJokesFound = () => {
       <p>No jokes found!</p>
       <a className='btn'>Add a Joke</a>
     </div>
-  );
-};
+  ) 
+} 
 
-export default NoJokesFound;
+export default NoJokesFound 

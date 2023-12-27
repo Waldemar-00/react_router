@@ -1,4 +1,4 @@
-import styles from './Header.module.css';
+import styles from './Header.module.css' 
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         </ul>
       </nav>
     </header>
-  );
-};
+  ) 
+} 
 
-export default Header;
+export default Header 

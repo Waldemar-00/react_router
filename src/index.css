@@ -57,3 +57,17 @@ body {
   background-color: #f48405;
   color: white;
 }
+
+/* for a while */
+main {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #f48405;
+}
+/* for a while */

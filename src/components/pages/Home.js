@@ -3,7 +3,7 @@ const Home = () => {
   return (
     <>
       <h1>Home Page!</h1>
-      <Link to='/article'>Article</Link>
+      <Link to='/articles'>Article</Link>
     </>
   )
 }

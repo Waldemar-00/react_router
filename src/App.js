@@ -21,10 +21,10 @@ function App() {
         <Route path='/about'>
           <About/>
         </Route>
-        <Route path='/article'>
+        <Route path='/articles'>
           <Articles/>
         </Route>
-        <Route path='/article-details/:articleId'>
+        <Route path='/article-details/:property'>
           <ArticlesDetails />
         </Route>
         <Route path='/contact'>

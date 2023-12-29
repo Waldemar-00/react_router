@@ -5,7 +5,7 @@ import Header from './components/Header'
 import ContactUs from './components/pages/ContactUs'
 import Articles from './components/pages/Articles'
 import ArticlesDetails from './components/pages/ArticleDetails'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 function App() {
   return (
@@ -13,6 +13,9 @@ function App() {
       <Header />
       <main>
         <Switch> { /*ONLY TO USE ONE ROUTE*/}
+          <Route path='/' exact>
+            <Redirect to='/about' />
+          </Route>
           <Route path='/start'>
             <Start/>
           </Route>

@@ -9,7 +9,10 @@ body {
   margin: 0;
   background-color: #f7f7f7;
 }
-
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
 .centered {
   margin: 3rem auto;
   text-align: center;

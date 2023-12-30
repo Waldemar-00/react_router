@@ -10,7 +10,7 @@ const JokeItem = ({id, type, setup, punchline}) => {
         </blockquote>
         <figcaption>{type}</figcaption>
       </figure>
-      <Link to='' className='btn'>Expand</Link>
+      <Link to={`/jokes/${id}`} className='btn'>Expand</Link>
     </li>
   ) 
 } 

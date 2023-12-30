@@ -1,20 +1,20 @@
 import { useRef } from 'react' 
 
-import Card from '../ui/Card' 
+import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
 import styles from './JokeForm.module.css' 
 
 const JokeForm = (props) => {
-  const topicInputRef = useRef() 
-  const textInputRef = useRef() 
+  const typeInputRef = useRef() 
+  const setupInputRef = useRef()
+  const punchlineInputRef = useRef()
 
   function submitFormHandler(event) {
     event.preventDefault() 
-
-    const enteredTopic = topicInputRef.current.value 
-    const enteredText = textInputRef.current.value 
-
-    props.onAddJoke({ topic: enteredTopic, text: enteredText }) 
+    const type = typeInputRef.current.value 
+    const setup = setupInputRef.current.value 
+    const punchline = punchlineInputRef.current.value
+    props.onAddJoke({ type, setup, punchline }) 
   }
 
   return (
@@ -27,12 +27,16 @@ const JokeForm = (props) => {
         )}
 
         <div className={styles.control}>
-          <label htmlFor='topic'>Topic</label>
-          <input type='text' id='topic' ref={topicInputRef} />
+          <label htmlFor='type'>Type</label>
+          <input type='text' id='type' ref={typeInputRef} />
         </div>
         <div className={styles.control}>
-          <label htmlFor='text'>Text</label>
-          <textarea id='text' rows='5' ref={textInputRef}></textarea>
+          <label htmlFor='setup'>Setup</label>
+          <textarea id='setup' type='text' rows='5' ref={setupInputRef}></textarea>
+        </div>
+        <div className={styles.control}>
+          <label htmlFor='punchline'>Punchline</label>
+          <textarea id='punchline' type='text' rows='5' ref={punchlineInputRef}></textarea>
         </div>
         <div className={styles.actions}>
           <button className='btn'>Add Joke</button>

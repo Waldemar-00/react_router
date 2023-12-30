@@ -1,15 +1,16 @@
 import styles from './JokeItem.module.css' 
-
-const JokeItem = (props) => {
+import { Link } from 'react-router-dom'
+const JokeItem = ({id, type, setup, punchline}) => {
   return (
-    <li className={styles.item}>
+    <li className={styles.item} id={id}>
       <figure>
         <blockquote>
-          <p>{props.text}</p>
+          <p>{setup}</p>
+          <p>{punchline}</p>
         </blockquote>
-        <figcaption>{props.topic}</figcaption>
+        <figcaption>{type}</figcaption>
       </figure>
-      <a className='btn'>Expand</a>
+      <Link to='' className='btn'>Expand</Link>
     </li>
   ) 
 } 

@@ -1,15 +1,15 @@
 import styles from './Header.module.css' 
-
+import { NavLink } from 'react-router-dom'
 const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <ul>
           <li>
-            <a href='/'>Jokes</a>
+            <NavLink activeClassName={styles.active} to='/jokes'>Jokes</NavLink>
           </li>
           <li>
-            <a href='/'>Add a Joke</a>
+            <NavLink activeClassName={styles.active} to='/jokes-add'>Add a Joke</NavLink>
           </li>
         </ul>
       </nav>

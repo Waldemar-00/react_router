@@ -1,11 +1,13 @@
-import { useRef } from 'react' 
+import { useRef, useState, Fragment } from 'react' 
 
 import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
 import styles from './JokeForm.module.css' 
 import { v4 } from 'uuid'
+import { Prompt } from 'react-router-dom'
 
 const JokeForm = (props) => {
+  const [isFocusedForm, setFocus] = useState(false)
   const typeInputRef = useRef() 
   const setupInputRef = useRef()
   const punchlineInputRef = useRef()
@@ -18,33 +20,55 @@ const JokeForm = (props) => {
     const id = v4()
     props.onAddJoke({ id, type, setup, punchline }) 
   }
+  function onFocusedHandler() {
+    setFocus(true)
 
+  }
+  function onSendDataHandler() {
+    setFocus(false)
+  }
   return (
-    <Card>
-      <form className={styles.form} onSubmit={submitFormHandler}>
-        {props.isLoading && (
-          <div className={styles.loading}>
-            <Loader />
-          </div>
-        )}
+    <Fragment>
+      <Prompt
+        when={isFocusedForm}
+        message={
+          (location, action) =>
+            'Do you want leave this page? If you left this page, you will lost all of your data in the form!'
+        }
+      /> 
+      <Card>
+        <form
+          className={styles.form}
+          onSubmit={submitFormHandler}
+          onFocus={onFocusedHandler}
+        >
+          {props.isLoading && (
+            <div className={styles.loading}>
+              <Loader />
+            </div>
+          )}
 
-        <div className={styles.control}>
-          <label htmlFor='type'>Type</label>
-          <input type='text' id='type' ref={typeInputRef} />
-        </div>
-        <div className={styles.control}>
-          <label htmlFor='setup'>Setup</label>
-          <textarea id='setup' type='text' rows='5' ref={setupInputRef}></textarea>
-        </div>
-        <div className={styles.control}>
-          <label htmlFor='punchline'>Punchline</label>
-          <textarea id='punchline' type='text' rows='5' ref={punchlineInputRef}></textarea>
-        </div>
-        <div className={styles.actions}>
-          <button className='btn'>Add Joke</button>
-        </div>
-      </form>
-    </Card>
+          <div className={styles.control}>
+            <label htmlFor='type'>Type</label>
+            <input type='text' id='type' ref={typeInputRef} />
+          </div>
+          <div className={styles.control}>
+            <label htmlFor='setup'>Setup</label>
+            <textarea id='setup' type='text' rows='5' ref={setupInputRef}></textarea>
+          </div>
+          <div className={styles.control}>
+            <label htmlFor='punchline'>Punchline</label>
+            <textarea id='punchline' type='text' rows='5' ref={punchlineInputRef}></textarea>
+          </div>
+          <div className={styles.actions}>
+            <button
+              className='btn'
+              onClick={onSendDataHandler}
+            >Add Joke</button>
+          </div>
+        </form>
+      </Card>
+    </Fragment>
   ) 
 } 
 

@@ -1,5 +1,6 @@
 import styles from './JokeItem.module.css' 
 import { Link } from 'react-router-dom'
+
 const JokeItem = ({ id, type, setup }) => {
   return (
     <li className={styles.item} id={id}>

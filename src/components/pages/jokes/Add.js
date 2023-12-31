@@ -1,7 +1,11 @@
 import JokeForm from '../../jokes/JokeForm'
+import { objectWithjokes } from './data-jokes'
+import { useHistory } from 'react-router-dom'
 const Add = () => {
-  const onAddJokeHandle = (joke) => {
-    console.log(joke)
+  const history = useHistory()
+  const onAddJokeHandle = (joke) => { //! { type, setup, punchline }
+    objectWithjokes.push(joke)
+    history.push('/jokes')
   }
   return (
     <>

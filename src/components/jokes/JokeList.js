@@ -4,7 +4,7 @@ import styles from './JokeList.module.css'
 const JokeList = ({ jokes }) => {
   return (
       <ul className={styles.list}>
-        {jokes.map((joke) => (
+        {jokes.map( joke => (
           <JokeItem
             key={joke.id}
             id={joke.id}

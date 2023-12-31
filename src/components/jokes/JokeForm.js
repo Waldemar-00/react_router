@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
 import styles from './JokeForm.module.css' 
+import { v4 } from 'uuid'
 
 const JokeForm = (props) => {
   const typeInputRef = useRef() 
@@ -14,7 +15,8 @@ const JokeForm = (props) => {
     const type = typeInputRef.current.value 
     const setup = setupInputRef.current.value 
     const punchline = punchlineInputRef.current.value
-    props.onAddJoke({ type, setup, punchline }) 
+    const id = v4()
+    props.onAddJoke({ id, type, setup, punchline }) 
   }
 
   return (

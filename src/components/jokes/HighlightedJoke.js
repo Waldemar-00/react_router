@@ -1,10 +1,11 @@
 import styles from './HighlightedJoke.module.css' 
 
-const HighlightedJoke = (props) => {
+const HighlightedJoke = ({joke}) => {
   return (
     <figure className={styles.joke}>
-      <p>{props.text}</p>
-      <figcaption>{props.topic}</figcaption>
+      <p>{joke.setup}</p>
+      <p>{joke.punchline}</p>
+      <figcaption>{joke.type}</figcaption>
     </figure>
   ) 
 } 

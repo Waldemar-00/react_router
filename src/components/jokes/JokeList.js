@@ -20,8 +20,8 @@ const JokeList = ({ jokes }) => {
   sortJokes(jokes, isParamSortAsc)
   function onSortJokesHandler() {
     isParamSortAsc
-      ? history.push('/jokes?sort=' + 'desc')
-      : history.push('/jokes?sort=' + 'asc')
+      ? history.push('/jokes?sort=desc')
+      : history.push('/jokes?sort=asc')
     sortJokes(jokes, isParamSortAsc)
   }
   return (

@@ -10,10 +10,12 @@ const Details = () => {
     foundJokeObject ?
       <>
       <h1>Details!</h1>
-      <HighlightedJoke joke={foundJokeObject} />
-        <Link className='btn--empty' to={`/jokes/${joke.key}/comments`}>
-          Show comments
-        </Link>
+        <HighlightedJoke joke={foundJokeObject} />
+        <Route path={`/jokes/${joke.key}`} exact>
+          <Link className='btn--empty' to={`/jokes/${joke.key}/comments`}>
+            Show comments
+          </Link>
+        </Route>
       <Route path={`/jokes/${joke.key}/comments`}>
         <Comments/>
       </Route>

@@ -10,7 +10,7 @@ const Details = () => {
     foundJokeObject ?
       <>
       <h1>Details!</h1>
-      <HighlightedJoke joke={foundJokeObject}/>
+      <HighlightedJoke joke={foundJokeObject} />
       <Route path={`/jokes/${joke.key}/comments`}>
         <Comments/>
       </Route>

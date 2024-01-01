@@ -1,4 +1,4 @@
-import { useRef, useState, Fragment } from 'react' 
+import { useRef, useState } from 'react' 
 
 import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
@@ -28,7 +28,7 @@ const JokeForm = (props) => {
     setFocus(false)
   }
   return (
-    <Fragment>
+    <>
       <Prompt
         when={isFocusedForm}
         message={
@@ -68,7 +68,7 @@ const JokeForm = (props) => {
           </div>
         </form>
       </Card>
-    </Fragment>
+    </>
   ) 
 } 
 

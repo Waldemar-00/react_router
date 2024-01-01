@@ -1,4 +1,4 @@
-import { useParams, Route } from 'react-router-dom'
+import { useParams, Route, Link } from 'react-router-dom'
 import Comments from '../../comments/Comments'
 import { objectWithjokes } from './data-jokes'
 import HighlightedJoke from '../../jokes/HighlightedJoke'
@@ -11,6 +11,9 @@ const Details = () => {
       <>
       <h1>Details!</h1>
       <HighlightedJoke joke={foundJokeObject} />
+        <Link className='btn--empty' to={`/jokes/${joke.key}/comments`}>
+          Show comments
+        </Link>
       <Route path={`/jokes/${joke.key}/comments`}>
         <Comments/>
       </Route>

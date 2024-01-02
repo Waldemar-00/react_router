@@ -1,7 +1,9 @@
 import styles from './JokeItem.module.css' 
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 const JokeItem = ({ id, type, setup }) => {
+  const routeMatch = useRouteMatch()
+  console.log(routeMatch, 'in Items')
   return (
     <li className={styles.item} id={id}>
       <figure>
@@ -10,7 +12,7 @@ const JokeItem = ({ id, type, setup }) => {
         </blockquote>
         <figcaption>{type}</figcaption>
       </figure>
-      <Link to={`/jokes/${id}`} className='btn'>Expand</Link>
+      <Link to={`${routeMatch.url}/${id}`} className='btn'>Expand</Link>
     </li>
   ) 
 } 

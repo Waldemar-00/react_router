@@ -4,7 +4,9 @@ import { useHistory, useLocation } from 'react-router-dom'
 
 const JokeList = ({ jokes }) => {
   const history = useHistory()
-  const locationParamSort = new URLSearchParams(useLocation().search).get('sort')
+  const location = useLocation()
+  console.log(location, 'useLocation')
+  const locationParamSort = new URLSearchParams(location.search).get('sort')
   const isParamSortAsc = locationParamSort === 'asc'
   
   function sortJokes(jokes, isParamSortAsc) {
@@ -19,9 +21,13 @@ const JokeList = ({ jokes }) => {
   }
   sortJokes(jokes, isParamSortAsc)
   function onSortJokesHandler() {
-    isParamSortAsc
-      ? history.push('/jokes?sort=desc')
-      : history.push('/jokes?sort=asc')
+    // isParamSortAsc
+      // ? history.push(`${location.pathname}?sort=desc`)
+      // : history.push('/jokes?sort=asc')
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${ (isParamSortAsc ? 'desc' : 'asc') }`
+    })
     sortJokes(jokes, isParamSortAsc)
   }
   return (

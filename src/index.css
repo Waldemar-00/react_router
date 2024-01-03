@@ -26,7 +26,8 @@ ul, ol {
 .focused {
   font-size: 3rem;
   font-weight: bold;
-  color: white;
+  color: rgb(249, 159, 159);
+  margin: 0;
 }
 
 .btn {

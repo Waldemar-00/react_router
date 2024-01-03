@@ -7,7 +7,7 @@ function httpReducer(httpState, action) {
         data: null,
         error: null,
         status: 'pending',
-      } 
+      }
     }
     case 'success': {
       return {
@@ -46,7 +46,7 @@ function useHttp(sendRequest, isRequestSending = false) {
       } catch (error) {
         dispatch({
           type: 'error',
-          errorMessage: error.message || 'Something went wrong!',
+          errorMessage: 'Something went wrong!' || error.message,
         }) 
       }
     },

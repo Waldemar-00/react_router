@@ -1,10 +1,10 @@
 import styles from './NoJokesFound.module.css' 
-
+import { Link } from 'react-router-dom'
 const NoJokesFound = () => {
   return (
     <div className={styles['no-jokes']}>
       <p>No jokes found!</p>
-      <a className='btn'>Add a Joke</a>
+      <Link to='jokes-add' className='btn'>Add a Joke</Link>
     </div>
   ) 
 } 

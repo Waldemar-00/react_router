@@ -3,7 +3,6 @@ import { useRef, useState } from 'react'
 import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
 import styles from './JokeForm.module.css' 
-import { v4 } from 'uuid'
 import { Prompt } from 'react-router-dom'
 
 const JokeForm = (props) => {
@@ -17,8 +16,7 @@ const JokeForm = (props) => {
     const type = typeInputRef.current.value 
     const setup = setupInputRef.current.value 
     const punchline = punchlineInputRef.current.value
-    const id = v4()
-    props.onAddJoke({ id, type, setup, punchline }) 
+    props.onAddJoke({ type, setup, punchline }) 
   }
   function onFocusedHandler() {
     setFocus(true)

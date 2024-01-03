@@ -3,7 +3,6 @@ import { Link, useRouteMatch } from 'react-router-dom'
 
 const JokeItem = ({ id, type, setup }) => {
   const routeMatch = useRouteMatch()
-  console.log(routeMatch, 'in Items')
   return (
     <li className={styles.item} id={id}>
       <figure>

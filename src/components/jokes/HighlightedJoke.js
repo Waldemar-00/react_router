@@ -1,6 +1,6 @@
 import styles from './HighlightedJoke.module.css' 
 
-const HighlightedJoke = ({joke}) => {
+const HighlightedJoke = ({ joke }) => {
   return (
     <figure className={styles.joke}>
       <p>{joke.setup}</p>

@@ -5,11 +5,11 @@ import { useHistory, useLocation } from 'react-router-dom'
 const JokeList = ({ jokes }) => {
   const history = useHistory()
   const location = useLocation()
-  console.log(location, 'useLocation')
   const locationParamSort = new URLSearchParams(location.search).get('sort')
   const isParamSortAsc = locationParamSort === 'asc'
   
   function sortJokes(jokes, isParamSortAsc) {
+    if(!jokes) return []
     jokes.sort((joke1, joke2) => {
       if (isParamSortAsc) {
         return joke1.id > joke2.id ? 1 : -1
@@ -45,7 +45,8 @@ const JokeList = ({ jokes }) => {
         </button>
       </div>
       <ul className={styles.list}>
-        {jokes.map( joke => (
+        { jokes ?
+          jokes.map(joke => (
           <JokeItem
             key={joke.id}
             id={joke.id}
@@ -53,7 +54,9 @@ const JokeList = ({ jokes }) => {
             setup={joke.setup}
             punchline={joke.punchline}
           />
-        ))}
+          ))
+          : []
+        }
       </ul>
     </>
   ) 

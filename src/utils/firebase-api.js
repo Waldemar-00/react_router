@@ -1,5 +1,5 @@
 const FIREBASE_ROOT_DOMAIN =
-  'https://react-course-http-8220d-default-rtdb.firebaseio.com' 
+  'https://joke-fake-api-default-rtdb.firebaseio.com' 
 
 export async function getJokes() {
   const response = await fetch(`${FIREBASE_ROOT_DOMAIN}/jokes.json`) 
@@ -23,16 +23,15 @@ export async function getJokes() {
   return convertedJokes 
 }
 
-export async function getJoke(jokeId) {
-  const response = await fetch(`${FIREBASE_ROOT_DOMAIN}/jokes/${jokeId}.json`) 
+export async function getJoke(id) {
+  const response = await fetch(`${FIREBASE_ROOT_DOMAIN}/jokes/${id}.json`) 
   const data = await response.json() 
 
   if (!response.ok) {
-    throw new Error(data.message || 'Joke fetching error.') 
+    throw new Error('Joke fetching error.' || data.message ) 
   }
-
   const convertedJoke = {
-    id: jokeId,
+    id: id,
     ...data,
   } 
 

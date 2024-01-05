@@ -5,6 +5,8 @@ import { useHistory, useLocation } from 'react-router-dom'
 const JokeList = ({ jokes }) => {
   const history = useHistory()
   const location = useLocation()
+  const learn = new URLSearchParams(location.search)
+  console.log(learn.get('sort'))
   const locationParamSort = new URLSearchParams(location.search).get('sort')
   const isParamSortAsc = locationParamSort === 'asc'
   

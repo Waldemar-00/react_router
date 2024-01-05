@@ -5,36 +5,22 @@ import Header from './components/Header'
 import ContactUs from './components/pages/ContactUs'
 import Articles from './components/pages/Articles'
 import ArticlesDetails from './components/pages/ArticleDetails'
-import { Route, Switch, Redirect } from 'react-router-dom'
-
+import { Route, Routes } from 'react-router-dom'
+import Form from './components/pages/Form'
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <Switch> { /*ONLY TO USE ONE ROUTE*/}
-          <Route path='/' exact>
-            <Redirect to='/about' />
-          </Route>
-          <Route path='/start'>
-            <Start/>
-          </Route>
-          <Route path='/home'>
-            <Home/>
-          </Route>
-          <Route path='/about'>
-            <About/>
-          </Route>
-          <Route path='/articles' exact> {/*ONLY exact url*/}
-            <Articles/>
-          </Route>
-          <Route path='/article/:property'>
-            <ArticlesDetails />
-          </Route>
-          <Route path='/contact'>
-            <ContactUs />
-            </Route>
-        </Switch>
+        <Routes>
+          <Route path='start' element={<Start />}/>
+          <Route path='home' element={<Home />}/>
+          <Route path='about' element={<About />}/>
+          <Route path='articles' element={<Articles/>}/>
+          <Route path='article/:property' element={<ArticlesDetails />}/>
+          <Route path='contact' element={<ContactUs />} />
+          <Route path='start/user' element={<Form />} />
+        </Routes>
       </main>
     </div> 
   )

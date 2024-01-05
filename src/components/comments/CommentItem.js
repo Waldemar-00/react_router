@@ -1,9 +1,9 @@
 import styles from './CommentItem.module.css' 
 
-const CommentItem = (props) => {
+const CommentItem = ({comment}) => {
   return (
     <li className={styles.item}>
-      <p>{props.text}</p>
+      <p>{comment}</p>
     </li>
   ) 
 } 

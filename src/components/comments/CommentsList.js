@@ -1,11 +1,11 @@
 import CommentItem from './CommentItem' 
 import styles from './CommentsList.module.css' 
 
-const CommentsList = (props) => {
+const CommentsList = ({ data }) => {
   return (
     <ul className={styles.comments}>
-      {props.comments.map((comment) => (
-        <CommentItem key={comment.id} text={comment.text} />
+      {data.map((comment) => (
+        <CommentItem key={comment.id} comment={comment.comment} />
       ))}
     </ul>
   ) 

@@ -13,13 +13,13 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path='start' element={<Start />}/>
+          <Route index element={<Start />}/>
           <Route path='home' element={<Home />}/>
           <Route path='about' element={<About />}/>
           <Route path='articles' element={<Articles/>}/>
           <Route path='article/:property' element={<ArticlesDetails />}/>
           <Route path='contact' element={<ContactUs />} />
-          <Route path='start/user' element={<Form />} />
+          <Route path='user' element={<Form />} />
         </Routes>
       </main>
     </div> 

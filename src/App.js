@@ -5,7 +5,7 @@ import Header from './components/Header'
 import ContactUs from './components/pages/ContactUs'
 import Articles from './components/pages/Articles'
 import ArticlesDetails from './components/pages/ArticleDetails'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Form from './components/pages/Form'
 function App() {
   return (
@@ -13,13 +13,14 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route index element={<Start />}/>
+          <Route path='start' index element={<Start />}/>
           <Route path='home' element={<Home />}/>
           <Route path='about' element={<About />}/>
           <Route path='articles' element={<Articles/>}/>
           <Route path='article/:property' element={<ArticlesDetails />}/>
           <Route path='contact' element={<ContactUs />} />
-          <Route path='user' element={<Form />} />
+          <Route path='start/user' element={<Form />} />
+          <Route path='*' element={<Navigate to='start'/>} />
         </Routes>
       </main>
     </div> 

@@ -6,10 +6,10 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <NavLink activeClassName={styles.active} to='/jokes'>Jokes</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.active : ''} to='jokes'>Jokes</NavLink>
           </li>
           <li>
-            <NavLink activeClassName={styles.active} to='/jokes-add'>Add a Joke</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.active : ''} to='jokes-add'>Add a Joke</NavLink>
           </li>
         </ul>
       </nav>

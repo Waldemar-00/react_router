@@ -1,12 +1,12 @@
-import { useRef, useState } from 'react' 
+import { useRef } from 'react' 
 
 import Card from '../UI/Card' 
 import Loader from '../UI/Loader' 
 import styles from './JokeForm.module.css' 
-import { Prompt } from 'react-router-dom'
-
+// import { unstable_usePrompt } from 'react-router-dom'
+// 
 const JokeForm = (props) => {
-  const [isFocusedForm, setFocus] = useState(false)
+  // const [isFocusedForm, setFocus] = useState(false)
   const typeInputRef = useRef() 
   const setupInputRef = useRef()
   const punchlineInputRef = useRef()
@@ -18,27 +18,27 @@ const JokeForm = (props) => {
     const punchline = punchlineInputRef.current.value
     props.onAddJoke({ type, setup, punchline }) 
   }
-  function onFocusedHandler() {
-    setFocus(true)
+  // function onFocusedHandler() {
+    // setFocus(true)
 
-  }
-  function onSendDataHandler() {
-    setFocus(false)
-  }
+  // }
+  // function onSendDataHandler() {
+    // setFocus(false)
+  // }
   return (
     <>
-      <Prompt
-        when={isFocusedForm}
-        message={
-          (location, action) =>
-            'Do you want leave this page? If you left this page, you will lost all of your data in the form!'
-        }
-      /> 
+      {/* <unstable_usePrompt */}
+        {/* // when={isFocusedForm} */}
+        {/* // message={ */}
+          {/* // (location, action) => */}
+            {/* // 'Do you want leave this page? If you left this page, you will lost all of your data in the form!' */}
+        {/* // } */}
+      {/* // />  */}
       <Card>
         <form
           className={styles.form}
           onSubmit={submitFormHandler}
-          onFocus={onFocusedHandler}
+          // onFocus={onFocusedHandler}
         >
           {props.isLoading && (
             <div className={styles.loading}>
@@ -61,7 +61,7 @@ const JokeForm = (props) => {
           <div className={styles.actions}>
             <button
               className='btn'
-              onClick={onSendDataHandler}
+              // onClick={onSendDataHandler}
             >Add Joke</button>
           </div>
         </form>

@@ -1,29 +1,22 @@
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom'
 import Jokes from './components/pages/jokes/Jokes'
 import Details from './components/pages/jokes/Details'
 import Add from './components/pages/jokes/Add'
 import Layout from './components/layout/Layout'
 import Found404 from './components/pages/jokes/404' 
+import Comments from './components/comments/Comments'
 const AppJokes = () => {
+  const id = useLocation().state
   return (
       <Layout>
-        <Switch>
-          <Route path='/' exact>
-            <Redirect to='/jokes'/>
-          </Route>
-          <Route path='/jokes' exact>
-            <Jokes/>
-          </Route>
-          <Route path='/jokes/:key'>
-            <Details/>
-          </Route>
-          <Route path='/jokes-add'>
-            <Add/>
-        </Route>
-        <Route path='*'>
-          <Found404/>
-        </Route>
-        </Switch>
+        <Routes>
+        <Route path='jokes' element={ <Jokes /> } />
+        <Route path='jokes/:key' element={<Details />}/>
+        <Route path={`/jokes/${id}/comments`} element={<Comments />} />
+        <Route path='jokes-add' element={ <Add /> } />
+        <Route path='*' element={ <Found404 /> } />
+        <Route path='/' element={ <Navigate to='jokes' /> } />
+        </Routes>
       </Layout>
   )
 }

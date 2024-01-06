@@ -11,6 +11,7 @@ const Comments = () => {
   const [isComment, setComment] = useState(false) 
   const { sendHttpRequest, data, status } = useHttp(getComments)
   const id = useParams().key
+  console.log(id)
   useEffect(() => {
     sendHttpRequest(id)
   }, [sendHttpRequest, id])

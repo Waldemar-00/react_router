@@ -1,12 +1,10 @@
 import JokeItem from './JokeItem' 
 import styles from './JokeList.module.css' 
-import { useHistory, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const JokeList = ({ jokes }) => {
-  const history = useHistory()
+  const history = useNavigate()
   const location = useLocation()
-  const learn = new URLSearchParams(location.search)
-  console.log(learn.get('sort'))
   const locationParamSort = new URLSearchParams(location.search).get('sort')
   const isParamSortAsc = locationParamSort === 'asc'
   
@@ -23,10 +21,7 @@ const JokeList = ({ jokes }) => {
   }
   sortJokes(jokes, isParamSortAsc)
   function onSortJokesHandler() {
-    // isParamSortAsc
-      // ? history.push(`${location.pathname}?sort=desc`)
-      // : history.push('/jokes?sort=asc')
-    history.push({
+    history({
       pathname: location.pathname,
       search: `?sort=${ (isParamSortAsc ? 'desc' : 'asc') }`
     })

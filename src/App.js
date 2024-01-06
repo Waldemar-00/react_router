@@ -20,7 +20,8 @@ function App() {
           <Route path='article/:property' element={<ArticlesDetails />}/>
           <Route path='contact' element={<ContactUs />} />
           <Route path='start/user' element={<Form />} />
-          <Route path='*' element={<Navigate to='start'/>} />
+          <Route path='*' element={<Navigate to='start' />} />
+          { /* other props: replace={true} - history replace; state={{data:[]} - to transfer data }*/}
         </Routes>
       </main>
     </div> 
